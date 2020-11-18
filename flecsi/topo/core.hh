@@ -103,8 +103,8 @@ struct specialization : specialization_base {
     return D::index_spaces::value;
   }
   template<auto S> // we can't use D::index_space here
-  static constexpr std::size_t privilege_count =
-    std::is_same_v<decltype(S), typename D::index_space> ? 1 : throw;
+  static constexpr std::size_t privilege_count = 1;
+  //  std::is_same_v<decltype(S), typename D::index_space> ? 1 : throw;
 
   static void initialize(slot &) {}
 };

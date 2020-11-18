@@ -191,7 +191,7 @@ struct util::serial<topo::unstructured_impl::entity_info> {
   }
   static type get(const std::byte *& p) {
     const serial_cast r{p};
-    return type{r, r, r, std::set<std::size_t>(r)};
+    return type{r, r, r, std::set<std::size_t>(std::initializer_list<std::size_t>(r))};
   }
 };
 
